@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sabor e Afeto - Confeitaria</title>
+  <style>
+    h1 {
+      color: #663919;
+    }
+  </style>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f8b195;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #663919;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .bolo {
+      width: 30%;
+      background-color: #ffe0d1;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .bolo img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .bolo h3 {
+      margin-top: 15px;
+      color: #6c5b7b;
+    }
+
+    @media screen and (max-width: 768px) {
+      .bolo {
+        width: 45%;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .bolo {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Bolos no Palito</h1>
+  <p style="color: #663919;">Se encante com nossas delícias no palito!</p>
+</header>
+
+<nav>
+  <a href="index.html#bolos">Inicio</a>
+  <a href="Salgados.html">Salgados</a>
+  <a href="index.html#empadoes">Empadões</a>
+  <a href="index.html#brigadeiros">Brigadeiros</a>
+</nav>
+
+<div class="container">
+  <!-- Primeira linha -->
+  <div class="bolo">
+    <img src="https://images.unsplash.com/photo-1589308078054-832c1e8fe8cc?auto=format&fit=crop&w=600&q=80" alt="Bolo de Laranja no Palito">
+    <h3>Laranja</h3>
+  </div>
+
+  <div class="bolo">
+    <img src="http://i.pinimg.com/736x/ca/89/ea/ca89ea301d70ca6fc0787c4bd3dea320.jpg" alt="Bolo de Coco no Palito">
+    <h3>Coco</h3>
+  </div>
+
+  <div class="bolo">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Bolo de Chocolate no Palito">
+    <h3>Chocolate</h3>
+  </div>
+
+  <!-- Segunda linha -->
+  <div class="bolo">
+    <img src="https://images.unsplash.com/photo-1679678697173-524be7a7ec4c?auto=format&fit=crop&w=600&q=80" alt="Bolo Formigueiro no Palito">
+    <h3>Formigueiro</h3>
+  </div>
+
+  <div class="bolo">
+    <img src="https://images.unsplash.com/photo-1599785209707-28c3f71da5e3?auto=format&fit=crop&w=600&q=80" alt="Bolo Brigadeiro no Palito">
+    <h3>Brigadeiro</h3>
+  </div>
+
+  <div class="bolo">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Bolo de Morango no Palito">
+    <h3>Morango</h3>
+  </div>
+</div>
+
+</body>
+</html>
