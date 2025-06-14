@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Sabor e Afeto - Confeitaria</title>
   <style>
     h1 {
@@ -56,6 +56,11 @@
       height: 200px;
       object-fit: cover;
       border-radius: 8px;
+      cursor: pointer; /* mostra que é clicável */
+      transition: transform 0.3s ease;
+    }
+    .salgado img:hover {
+      transform: scale(1.05);
     }
 
     .salgado h3 {
@@ -68,6 +73,13 @@
       text-decoration: none;
     }
 
+    .preco {
+      color: #5C4033;
+      font-weight: bold;
+      margin-top: 5px;
+      font-size: 1.1em;
+    }
+
     @media screen and (max-width: 768px) {
       .salgado {
         width: 45%;
@@ -78,6 +90,49 @@
       .salgado {
         width: 90%;
       }
+    }
+
+    /* Estilo do modal da galeria */
+    .modal {
+      display: none; /* escondido por padrão */
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 15px white;
+      animation: zoomIn 0.3s;
+    }
+
+    @keyframes zoomIn {
+      from {transform: scale(0.7);}
+      to {transform: scale(1);}
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .modal-close:hover {
+      color: #f8b195;
     }
   </style>
 </head>
@@ -97,35 +152,82 @@
 
 <div class="container">
   <div class="salgado">
-    <img src="https://i.pinimg.com/736x/f7/3c/41/f73c4138f7620c232e4053831bd0c1f9.jpg" alt="Pastel de Carne" />
+    <img src="https://i.pinimg.com/736x/f7/3c/41/f73c4138f7620c232e4053831bd0c1f9.jpg" alt="Pastel de Carne" data-full="https://i.pinimg.com/736x/f7/3c/41/f73c4138f7620c232e4053831bd0c1f9.jpg" />
     <h3><a href="https://wa.me/5548996443302?text=Olá!%20Tenho%20interesse%20em%20Pastel%20de%20Carne." target="_blank">Pastel de Carne</a></h3>
+    <div class="preco">R$ 6,00</div>
   </div>
 
   <div class="salgado">
-    <img src="https://i.pinimg.com/736x/02/18/1a/02181a452733ab920a4935204a4308f2.jpg" alt="Pastel de Frango" />
+    <img src="https://i.pinimg.com/736x/02/18/1a/02181a452733ab920a4935204a4308f2.jpg" alt="Pastel de Frango" data-full="https://i.pinimg.com/736x/02/18/1a/02181a452733ab920a4935204a4308f2.jpg" />
     <h3><a href="https://wa.me/5548996443302?text=Olá!%20Tenho%20interesse%20em%20Pastel%20de%20Frango." target="_blank">Pastel de Frango</a></h3>
+    <div class="preco">R$ 6,00</div>
   </div>
 
   <div class="salgado">
-    <img src="https://i.pinimg.com/736x/e9/8f/4a/e98f4adc760b9f7fc94f8c93c6b5d8e1.jpg" alt="Pastel de Frango com Catupiry" />
+    <img src="https://i.pinimg.com/736x/e9/8f/4a/e98f4adc760b9f7fc94f8c93c6b5d8e1.jpg" alt="Pastel de Frango com Catupiry" data-full="https://i.pinimg.com/736x/e9/8f/4a/e98f4adc760b9f7fc94f8c93c6b5d8e1.jpg" />
     <h3><a href="https://wa.me/5548996443302?text=Olá!%20Tenho%20interesse%20em%20Pastel%20de%20Frango%20com%20Catupiry." target="_blank">Pastel de Frango com Catupiry</a></h3>
+    <div class="preco">R$ 6,00</div>
   </div>
 
   <div class="salgado">
-    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d734d1f3-1434-43ef-9aed-b968b7098e72/202503011149_Q2K0_i.jpg" alt="Pastel de Milho com Catupiry" />
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d734d1f3-1434-43ef-9aed-b968b7098e72/202503011149_Q2K0_i.jpg" alt="Pastel de Milho com Catupiry" data-full="https://static.ifood-static.com.br/image/upload/t_medium/pratos/d734d1f3-1434-43ef-9aed-b968b7098e72/202503011149_Q2K0_i.jpg" />
     <h3><a href="https://wa.me/5548996443302?text=Olá!%20Tenho%20interesse%20em%20Pastel%20de%20Milho%20com%20Catupiry." target="_blank">Pastel de Milho com Catupiry</a></h3>
+    <div class="preco">R$ 6,00</div>
   </div>
 
   <div class="salgado">
-    <img src="https://i.pinimg.com/736x/40/f8/88/40f888aa0903e9ea13ae2b788af5c53f.jpg" alt="Pastel de Pizza" />
+    <img src="https://i.pinimg.com/736x/40/f8/88/40f888aa0903e9ea13ae2b788af5c53f.jpg" alt="Pastel de Pizza" data-full="https://i.pinimg.com/736x/40/f8/88/40f888aa0903e9ea13ae2b788af5c53f.jpg" />
     <h3><a href="https://wa.me/5548996443302?text=Olá!%20Tenho%20interesse%20em%20Pastel%20de%20Pizza." target="_blank">Pastel de Pizza</a></h3>
+    <div class="preco">R$ 6,00</div>
   </div>
 
   <div class="salgado">
-    <img src="https://img.cybercook.com.br/imagens/receitas/270/pastel-de-calabresa-e-cream-cheese-840x480.jpg?q=75" alt="Pastel de Calabresa" />
+    <img src="https://img.cybercook.com.br/imagens/receitas/270/pastel-de-calabresa-e-cream-cheese-840x480.jpg?q=75" alt="Pastel de Calabresa" data-full="https://img.cybercook.com.br/imagens/receitas/270/pastel-de-calabresa-e-cream-cheese-840x480.jpg?q=75" />
     <h3><a href="https://wa.me/5548996443302?text=Olá!%20Tenho%20interesse%20em%20Pastel%20de%20Calabresa." target="_blank">Pastel de Calabresa</a></h3>
+    <div class="preco">R$ 6,00</div>
   </div>
 </div>
+
+<!-- Modal da galeria -->
+<div id="modalGaleria" class="modal">
+  <span class="modal-close" id="modalFechar">&times;</span>
+  <img class="modal-content" id="modalImg" alt="Imagem Ampliada" />
+</div>
+
+<script>
+  // Pegar todos os imgs dentro dos salgados
+  const imgs = document.querySelectorAll('.salgado img');
+  const modal = document.getElementById('modalGaleria');
+  const modalImg = document.getElementById('modalImg');
+  const modalFechar = document.getElementById('modalFechar');
+
+  imgs.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = "block";
+      // Usar o src do atributo data-full (imagem grande)
+      modalImg.src = img.getAttribute('data-full');
+      modalImg.alt = img.alt;
+    });
+  });
+
+  modalFechar.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  // Fechar modal ao clicar fora da imagem
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Fechar modal ao apertar ESC
+  document.addEventListener('keydown', (e) => {
+    if(e.key === "Escape") {
+      modal.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
